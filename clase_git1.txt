@@ -1,4 +1,5 @@
 
+
 Ever@ever MINGW64 ~/Desktop
 $ mkdir miapp
 
@@ -6,7 +7,6 @@ Ever@ever MINGW64 ~/Desktop
 $ dir
 Persona\ 1\ -\ Chrome.lnk  activar_win8_pro.txt  driver.png  respaldo
 Thumbs.db                  desktop.ini           miapp
-
 
 
 Ever@ever MINGW64 ~/Desktop
@@ -441,6 +441,78 @@ $ mv archivo1.txt archivo.txt
 Ever@ever MINGW64 ~/Desktop/miweb (main)
 $ ls
 archivo.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    archivo1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        archivo.txt
+        clase_git.txt
+        clase_git1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git add .
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    archivo1.txt -> archivo.txt
+        new file:   clase_git.txt
+        new file:   clase_git1.txt
+
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git commit -m "renombrando archivo"
+[main 6db7b32] renombrando archivo
+ 3 files changed, 892 insertions(+)
+ rename archivo1.txt => archivo.txt (100%)
+ create mode 100644 clase_git.txt
+ create mode 100644 clase_git1.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ ls
+archivo.txt  clase_git.txt  clase_git1.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git mv archivo.txt archivo1.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ ls
+archivo1.txt  clase_git.txt  clase_git1.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    archivo.txt -> archivo1.txt
+
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git commit -m "Cambiando nombre"
+[main 214402d] Cambiando nombre
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename archivo.txt => archivo1.txt (100%)
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
 
 Ever@ever MINGW64 ~/Desktop/miweb (main)
 $
