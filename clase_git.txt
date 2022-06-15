@@ -1,0 +1,446 @@
+
+Ever@ever MINGW64 ~/Desktop
+$ mkdir miapp
+
+Ever@ever MINGW64 ~/Desktop
+$ dir
+Persona\ 1\ -\ Chrome.lnk  activar_win8_pro.txt  driver.png  respaldo
+Thumbs.db                  desktop.ini           miapp
+
+
+
+Ever@ever MINGW64 ~/Desktop
+$ cd miapp
+
+Ever@ever MINGW64 ~/Desktop/miapp
+$ mkdir src
+
+Ever@ever MINGW64 ~/Desktop/miapp
+$ touch LICENSE
+
+Ever@ever MINGW64 ~/Desktop/miapp
+$ echo "Documentacion " > Readme.md
+
+Ever@ever MINGW64 ~/Desktop/miapp
+$ ls
+LICENSE  Readme.md  src/
+
+Ever@ever MINGW64 ~/Desktop/miapp
+$ git init .
+Initialized empty Git repository in C:/Users/ReneEverardo/Desktop/miapp/.git/
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git log
+fatal: your current branch 'main' does not have any commits yet
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git add .
+warning: LF will be replaced by CRLF in Readme.md.
+The file will have its original line endings in your working directory
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   LICENSE
+        new file:   Readme.md
+
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git config --list --system
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=true
+core.editor="C:\\Program Files\\Microsoft VS Code\\bin\\code" --wait
+pull.rebase=false
+init.defaultbranch=main
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git config --list --global
+fatal: unable to read config file 'C:/Users/ReneEverardo/.gitconfig': No such file or directory
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git config --list --local
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ cat .git/config
+[core]
+        repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = true
+        symlinks = false
+        ignorecase = true
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git commit -a
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Ever@ever.(none)')
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git --version
+git version 2.36.1.windows.1
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git config --global user.name "Everardo Contreras Arias"
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git config --global user.email re.contreras.a@outlook.com
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git config --global core.editor "code --wait"
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git config --global -e
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git config --global core.autocrlf true
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ git config -h
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ pwd
+/c/Users/ReneEverardo/Desktop/miapp
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ ls
+LICENSE  Readme.md  src/
+
+Ever@ever MINGW64 ~/Desktop/miapp (main)
+$ cd ..
+
+Ever@ever MINGW64 ~/Desktop
+$ mkdir miweb
+
+Ever@ever MINGW64 ~/Desktop
+$ ls
+'Persona 1 - Chrome.lnk'*   Thumbs.db   activar_win8_pro.txt   desktop.ini   driver.png   miapp/   miweb/   respaldo/
+
+Ever@ever MINGW64 ~/Desktop
+$ cd miweb
+
+Ever@ever MINGW64 ~/Desktop/miweb
+$ pwd
+/c/Users/ReneEverardo/Desktop/miweb
+
+Ever@ever MINGW64 ~/Desktop/miweb
+$ git init
+Initialized empty Git repository in C:/Users/ReneEverardo/Desktop/miweb/.git/
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ ls -a
+./  ../  .git/
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ cd .git
+
+Ever@ever MINGW64 ~/Desktop/miweb/.git (GIT_DIR!)
+$ ls
+HEAD  config  description  hooks/  info/  objects/  refs/
+
+Ever@ever MINGW64 ~/Desktop/miweb/.git (GIT_DIR!)
+$ cd ..
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ ls
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ code .
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        archivo1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git add archivo.txt
+fatal: pathspec 'archivo.txt' did not match any files
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        archivo1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ ls
+archivo1.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git add archivo1.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   archivo1.txt
+
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git add archivo2.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   archivo1.txt
+        new file:   archivo2.txt
+
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   archivo1.txt
+        new file:   archivo2.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   archivo2.txt
+
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git add archivo2.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   archivo1.txt
+        new file:   archivo2.txt
+
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git commit -m "Primer commit"
+[main (root-commit) e1a4cff] Primer commit
+ 2 files changed, 3 insertions(+)
+ create mode 100644 archivo1.txt
+ create mode 100644 archivo2.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git add archivo2.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   archivo2.txt
+
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git commit
+[main 57cd2dc] Segundo cambio
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ rm archivo2.txt
+rm: cannot remove 'archivo2.txt': Permission denied
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ rm archivo2.txt
+rm: cannot remove 'archivo2.txt': Permission denied
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ rm archivo2.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    archivo2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git add archivo2.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    archivo2.txt
+
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git commit -m "eliminando archivo2"
+[main 0708e5f] eliminando archivo2
+ 1 file changed, 3 deletions(-)
+ delete mode 100644 archivo2.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ rm archivo1.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    archivo1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git restore archivo1.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ rm archivo1.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    archivo1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git restore archivo1.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ mv archivo1.txt archivo.txt
+mv: cannot move 'archivo1.txt' to 'archivo.txt': Permission denied
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ mv archivo1.txt archivo.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$ ls
+archivo.txt
+
+Ever@ever MINGW64 ~/Desktop/miweb (main)
+$
